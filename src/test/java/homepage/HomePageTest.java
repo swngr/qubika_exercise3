@@ -32,8 +32,8 @@ public class HomePageTest extends BaseTest {
         contactUsForm.clickOnSubmitButton();
         contactUsForm.validateErrorMessages(new String[]{"Last Name", "Email", "Company name", "Message"});
         contactUsForm.clearFieldsData();
-        contactUsForm.inputFirstName("John");
-        contactUsForm.inputLastName("Doe");
+        contactUsForm.inputFirstName("Sw");
+        contactUsForm.inputLastName("Ngr");
         contactUsForm.inputCompany("Qubika Corp");
         contactUsForm.inputContactType("Interested in Qubika services");
         contactUsForm.inputMessage("This is a test message");

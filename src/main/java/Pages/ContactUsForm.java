@@ -53,7 +53,8 @@ public class ContactUsForm {
         driver.findElement(message).sendKeys(userMessage);
     }
 
-    public void clickOnSubmitButton() {
+    public void clickOnSubmitButton() throws InterruptedException {
+        Thread.sleep(1000);
         driver.findElement(submitButton).click();
     }
 
