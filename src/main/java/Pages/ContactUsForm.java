@@ -1,5 +1,6 @@
 package Pages;
 
+import Helpers.WaitForLoad;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,9 +16,11 @@ public class ContactUsForm {
     private By contactType = By.name("contact_type");
     private By message = By.name("message");
     private By submitButton = By.xpath("//input[@type='submit']");
+    private WaitForLoad waitForLoad;
 
     public ContactUsForm(WebDriver driver) {
         this.driver = driver;
+        this.waitForLoad = new WaitForLoad(driver);
     }
 
     public void inputFirstName(String userFirstName) {
@@ -54,7 +57,7 @@ public class ContactUsForm {
     }
 
     public void clickOnSubmitButton() throws InterruptedException {
-        Thread.sleep(1000);
+        waitForLoad.waitForElement("submit");
         driver.findElement(submitButton).click();
     }
 
